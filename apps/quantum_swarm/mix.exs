@@ -35,7 +35,9 @@ defmodule QuantumSwarm.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    []
+    [
+      {:quantum, "~> 2.2"}
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -12,6 +12,10 @@ defmodule QuantumSwarm.Application do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
-    Supervisor.start_link([], strategy: :one_for_one, name: QuantumSwarm.Supervisor)
+    children = [
+      worker(QuantumSwarm.Scheduler, [])
+    ]
+
+    Supervisor.start_link(children, strategy: :one_for_one, name: QuantumSwarm.Supervisor)
   end
 end
