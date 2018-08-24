@@ -56,6 +56,14 @@ config :quantum_swarm_web, QuantumSwarmWeb.Endpoint,
 #     config :quantum_swarm_web, QuantumSwarmWeb.Endpoint, server: true
 #
 
+config :libcluster,
+  topologies: [
+    dns: [
+      strategy: Cluster.Strategy.DNSPoll,
+      config: [polling_interval: 5_000, query: "web", node_basename: "quantum_swarm_umbrella"]
+    ]
+  ]
+
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
