@@ -1,0 +1,3 @@
+#!/bin/bash
+
+iex --name quantum-swarm-console@127.0.0.1 -S mix

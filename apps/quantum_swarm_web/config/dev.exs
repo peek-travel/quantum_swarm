@@ -39,5 +39,3 @@ config :quantum_swarm_web, QuantumSwarmWeb.Endpoint,
       ~r{lib/quantum_swarm_web/templates/.*(eex)$}
     ]
   ]
-
-
