@@ -36,7 +36,7 @@ defmodule QuantumSwarm.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:quantum, "2.3.2"}
+      {:quantum, "2.3.3"}
     ]
   end
 
