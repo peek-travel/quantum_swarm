@@ -13,9 +13,13 @@ defmodule QuantumSwarm.Application do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(QuantumSwarm.Scheduler, [])
+      # worker(QuantumSwarm.Scheduler, [])
     ]
 
-    Supervisor.start_link(children, strategy: :one_for_one, name: QuantumSwarm.Supervisor)
+    resp = Supervisor.start_link(children, strategy: :one_for_one, name: QuantumSwarm.Supervisor)
+
+    {:ok, _pid} = Swarm.register_name(ThePonger, QuantumSwarm.Ponger, :start_link, [])
+
+    resp
   end
 end
